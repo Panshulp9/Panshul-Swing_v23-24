@@ -29,7 +29,7 @@ public class Easy2 implements ActionListener {
     private void prepareGUI() {
         mainFrame = new JFrame("Java SWING Examples");
         mainFrame.setSize(WIDTH, HEIGHT);
-        mainFrame.setLayout(new GridLayout(3, 1));
+        mainFrame.setLayout(new BorderLayout());
 
         //menu at top
         cut = new JMenuItem("cut");
@@ -82,7 +82,7 @@ public class Easy2 implements ActionListener {
         JButton Button2 = new JButton("Button2");
         JButton Button3 = new JButton("Button 3");
         JButton Button4 = new JButton("Button 4");
-        JButton Button5 = new JButton("Button5");
+        JButton Button5 = new JButton("Button 5");
 
 
        // Button1.setActionCommand("OK");
@@ -95,11 +95,11 @@ public class Easy2 implements ActionListener {
         Button4.addActionListener(new ButtonClickListener());
         Button5.addActionListener(new ButtonClickListener());
 
-        controlPanel.add(Button1);
-        controlPanel.add(Button2);
-        controlPanel.add(Button3);
-        controlPanel.add(Button4);
-        controlPanel.add(Button5);
+        mainFrame.add(Button1, BorderLayout.NORTH);
+        mainFrame.add(Button2, BorderLayout.EAST);
+        mainFrame.add(Button3, BorderLayout.SOUTH);
+        mainFrame.add(Button4, BorderLayout.WEST);
+        mainFrame.add(Button5, BorderLayout.CENTER);
 
         mainFrame.setVisible(true);
     }
